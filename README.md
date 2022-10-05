@@ -1,0 +1,1 @@
+NodeJS with TypeScript Sequelize Mysql RestFull API Boilerplate 
