@@ -30,16 +30,6 @@ class Controller {
     }
   }
 
-  async _getWhere(req: Request, res: Response, next: NextFunction, options: any) { 
-    try {
-      return await this.service.getWhere(options);
-    }
-    catch (e) {
-      next( e );
-      return e;
-    }
-  }
-
   async _get(req: Request, res: Response, next: NextFunction, populate: any) { 
     const { id } = req.params;
     try {
