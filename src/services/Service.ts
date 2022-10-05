@@ -28,14 +28,10 @@ class Service {
   }
 
   async findAll(options?: any) {
-    let { where, populate, sort, page, limit } = options;
-
-    page = page ? Number(page) : 0;
-    limit = limit ? Number(limit) : 20;
-    sort = sort ? sort : {createdAt: -1};
-    where = where ? JSON.parse(where) : {}
-    populate = populate ? populate : []
-
+    if(options) {
+    
+    }
+    
     try {
 
       let items = await this.model.findAll();
@@ -52,18 +48,6 @@ class Service {
   async find(id: number | string) {
     try {
       let item = await this.model.findOne({ where:{ id: id } });
-      if (item) return item
-      let error = new Error('Item not found');
-      // error.statusCode = 404;
-      throw error;
-    } catch (errors) {
-     throw errors;
-    }
-  }
-
-  async where(data: any) {
-    try {
-      let item = 'daha sonra overwrite'
       if (item) return item
       let error = new Error('Item not found');
       // error.statusCode = 404;
